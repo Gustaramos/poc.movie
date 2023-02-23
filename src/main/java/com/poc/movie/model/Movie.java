@@ -4,12 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "movie")
+@Table(name = "movie")//primeira letra maiuscula
 public class Movie {
 	
 	static String name;
 	private String cover;
-	private int amountOfMovies;
+	private int amountOfMovies;//nome da variavel nao eh essa
 	private int sumOfGrades;
 	private double rating;
 	
@@ -65,7 +65,7 @@ public class Movie {
 		return rating;
 	}
 	public void setRating(double rating) {
-		this.rating = rating;
+		this.rating = rating;//o rating vai ser sumOfGrades/amountOfVotes;
 	}
 
 }
