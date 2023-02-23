@@ -4,10 +4,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
 @Entity
 @Table(name = "movie")
 public class Movie extends BaseEntity{
 	
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
 	private static final long serialVersionUID = 1L;
 	static String name;
@@ -65,12 +69,10 @@ public class Movie extends BaseEntity{
 	public void setSumOfGrades(int sumOfGrades) {
 		this.sumOfGrades = sumOfGrades;
 	}
-
 	public double getRating() {
 		return rating;
 	}
 	public void setRating(int sumOfGrades, int amountOfVotes) {
-		this.rating = sumOfgrades / amountOfVotes;
+		this.rating = sumOfGrades / amountOfVotes;
 	}
-
 }
