@@ -4,30 +4,30 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "movie")//primeira letra maiuscula
+@Table(name = "Movie")
 public class Movie {
 	
 	static String name;
 	private String cover;
-	private int amountOfMovies;//nome da variavel nao eh essa
+	private int amountOfVotes;//nome da variavel nao eh essa
 	private int sumOfGrades;
 	private double rating;
 	
 	public Movie() {
 	}
 
-	public Movie(String name, String cover, int amountOfMovies, int sumOfGrades, double rating) {
+	public Movie(String name, String cover, int amountOfVotes, int sumOfGrades, double rating) {
 		Movie.name = name;
 		this.cover = cover;
-		this.amountOfMovies = amountOfMovies;
+		this.amountOfVotes= amountOfVotes;
 		this.sumOfGrades = sumOfGrades;
 		this.rating = rating;
 	}
 
-	public void Update(String name, String cover, int amountOfMovies, int sumOfGrades, double rating) {
+	public void Update(String name, String cover, int amountOfVotes, int sumOfGrades, double rating) {
 		Movie.name = name;
 		this.cover = cover;
-		this.amountOfMovies = amountOfMovies;
+		this.amountOfVotes= amountOfVotes;
 		this.sumOfGrades = sumOfGrades;
 		this.rating = rating;
 	}
@@ -48,10 +48,10 @@ public class Movie {
 	}
 
 	public int getAmountOfMovies() {
-		return amountOfMovies;
+		return amountOfVotes;
 	}
-	public void setAmountOfMovies(int amountOfMovies) {
-		this.amountOfMovies = amountOfMovies;
+	public void setAmountOfMovies(int amountOfVotes) {
+		this.amountOfVotes = amountOfVotes;
 	}
 
 	public int getSumOfGrades() {
@@ -64,8 +64,8 @@ public class Movie {
 	public double getRating() {
 		return rating;
 	}
-	public void setRating(double rating) {
-		this.rating = rating;//o rating vai ser sumOfGrades/amountOfVotes;
+	public void setRating(int sumOfGrades, int amountOfVotes) {
+		this.rating = sumOfGrades / amountOfVotes;
 	}
 
 }
