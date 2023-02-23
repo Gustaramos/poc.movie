@@ -14,25 +14,25 @@ public class Movie extends BaseEntity{
 	private String cover;
 	
 	@Column
-	private int amountOfMovies;
+	private int amountOfVotes;
 	private int sumOfGrades;
 	private double rating;
 	
 	public Movie() {
 	}
 
-	public Movie(String name, String cover, int amountOfMovies, int sumOfGrades, double rating) {
+	public Movie(String name, String cover, int amountOfVotes, int sumOfGrades, double rating) {
 		Movie.name = name;
 		this.cover = cover;
-		this.amountOfMovies = amountOfMovies;
+		this.amountOfVotes = amountOfVotes;
 		this.sumOfGrades = sumOfGrades;
 		this.rating = rating;
 	}
 
-	public void Update(String name, String cover, int amountOfMovies, int sumOfGrades, double rating) {
+	public void Update(String name, String cover, int amountOfVotes, int sumOfGrades, double rating) {
 		Movie.name = name;
 		this.cover = cover;
-		this.amountOfMovies = amountOfMovies;
+		this.amountOfVotes = amountOfVotes;
 		this.sumOfGrades = sumOfGrades;
 		this.rating = rating;
 	}
@@ -52,11 +52,11 @@ public class Movie extends BaseEntity{
 		this.cover = cover;
 	}
 
-	public int getAmountOfMovies() {
-		return amountOfMovies;
+	public int getAmountOfVotes() {
+		return amountOfVotes;
 	}
-	public void setAmountOfMovies(int amountOfMovies) {
-		this.amountOfMovies = amountOfMovies;
+	public void setAmountOfVotes(int amountOfVotes) {
+		this.amountOfVotes= amountOfVotes;
 	}
 
 	public int getSumOfGrades() {
@@ -69,8 +69,8 @@ public class Movie extends BaseEntity{
 	public double getRating() {
 		return rating;
 	}
-	public void setRating(double rating) {
-		this.rating = rating;
+	public void setRating(int sumOfGrades, int amountOfVotes) {
+		this.rating = sumOfgrades / amountOfVotes;
 	}
 
 }

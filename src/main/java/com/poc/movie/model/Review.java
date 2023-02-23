@@ -4,8 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-//sem nome da tabela
-
 @Entity
 @Table(name = "Review")
 public class Review extends BaseEntity{
