@@ -1,9 +1,22 @@
 package com.poc.movie.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 //sem nome da tabela
-public class Review {
+
+@Entity
+@Table(name = "Review")
+public class Review extends BaseEntity{
+	
+	@Column
+	private static final long serialVersionUID = 1L;
 	private String author;
 	private String publishedOn;
 	private String review;
+	
+	@Column
 	private int amountOfVotes;
 	private int sumOfGrades;
 	private double rating;
@@ -67,8 +80,8 @@ public class Review {
 	public double getRate() {
 		return rating;
 	}
-	public void setRate(double rating) {
-		this.rating = rating;//rating = sumOfGrades/amountOfVotes
+	public void setRate(int sumOfGrades, int amountOfVotes) {
+		this.rating = sumOfGrades / amountOfVotes;
 	}
 	
 	

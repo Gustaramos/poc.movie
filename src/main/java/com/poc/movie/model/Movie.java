@@ -1,14 +1,19 @@
 package com.poc.movie.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "movie")
-public class Movie {
+public class Movie extends BaseEntity{
 	
+	@Column
+	private static final long serialVersionUID = 1L;
 	static String name;
 	private String cover;
+	
+	@Column
 	private int amountOfMovies;
 	private int sumOfGrades;
 	private double rating;
