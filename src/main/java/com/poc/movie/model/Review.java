@@ -75,12 +75,10 @@ public class Review extends BaseEntity{
 		this.sumOfGrades = sumOfGrades;
 	}
 	
-	public double getRate() {
+	public double getRating() {
 		return rating;
 	}
-	public void setRate(int sumOfGrades, int amountOfVotes) {
+	public void setRating(int sumOfGrades, int amountOfVotes) {
 		this.rating = sumOfGrades / amountOfVotes;
-	}
-	
-	
+	}	
 }
