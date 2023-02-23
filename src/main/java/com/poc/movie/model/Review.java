@@ -1,7 +1,18 @@
 package com.poc.movie.model;
 
-public class Review {
-	private String author;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Review")
+public class Review extends BaseEntity{
+	
+	
+	private static final long serialVersionUID = 1721175577813205140L;
+	
+	@Column
+	static String author;
 	private String publishedOn;
 	private String review;
 	private int amountOfVotes;
@@ -12,7 +23,7 @@ public class Review {
 	}
 	
 	public Review(String author, String publishedOn, String review, int amountOfVotes, int sumOfGrades, double rating) {
-		this.author = author;
+		Review.author = author;
 		this.publishedOn = publishedOn;
 		this.review = review;
 		this.amountOfVotes = amountOfVotes;
@@ -21,7 +32,7 @@ public class Review {
 	}
 
 	public void Update(String author, String publishedOn, String review, int amountOfVotes, int sumOfGrades, double rating) {
-		this.author = author;
+		Review.author = author;
 		this.publishedOn = publishedOn;
 		this.review = review;
 		this.amountOfVotes = amountOfVotes;
@@ -33,7 +44,7 @@ public class Review {
 		return author;
 	}
 	public void setAuthor(String author) {
-		this.author = author;
+		Review.author = author;
 	}
 	
 	public String getPublishedOn() {
@@ -64,11 +75,11 @@ public class Review {
 		this.sumOfGrades = sumOfGrades;
 	}
 	
-	public double getRate() {
+	public double getRating() {
 		return rating;
 	}
-	public void setRate(double rating) {
-		this.rating = rating;
+	public void setRating(int sumOfGrades, int amountOfVotes ) {
+		this.rating = sumOfGrades / amountOfVotes ;
 	}
 	
 	

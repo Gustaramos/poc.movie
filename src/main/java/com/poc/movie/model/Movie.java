@@ -1,12 +1,16 @@
 package com.poc.movie.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "movie")
-public class Movie {
+public class Movie extends BaseEntity{
 	
+	private static final long serialVersionUID = 1721175577813205140L;
+	
+	@Column
 	static String name;
 	private String cover;
 	private int amountOfVotes;
