@@ -1,5 +1,5 @@
 package com.poc.movie.model;
-
+//sem nome da tabela
 public class Review {
 	private String author;
 	private String publishedOn;
@@ -68,7 +68,7 @@ public class Review {
 		return rating;
 	}
 	public void setRate(double rating) {
-		this.rating = rating;
+		this.rating = rating;//rating = sumOfGrades/amountOfVotes
 	}
 	
 	
