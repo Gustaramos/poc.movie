@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "movie")
+@Table(name = "movie")//mudar pra letra maiuscula
 public class Movie extends BaseEntity{
 	
 	private static final long serialVersionUID = 1721175577813205140L;
@@ -29,6 +29,8 @@ public class Movie extends BaseEntity{
 	}
 
 	public void Update(String name, String cover, int amountOfVotes, int sumOfGrades, double rating) {
+		//aqui no metodo de update usa os setXXX das propriedades
+		//ex this.setName(name);
 		Movie.name = name;
 		this.cover = cover;
 		this.amountOfVotes = amountOfVotes;
@@ -64,7 +66,7 @@ public class Movie extends BaseEntity{
 	public void setSumOfGrades(int sumOfGrades) {
 		this.sumOfGrades = sumOfGrades;
 	}
-
+	
 	public double getRating() {
 		return rating;
 	}
