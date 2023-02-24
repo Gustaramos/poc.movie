@@ -34,7 +34,6 @@ public class Movie extends BaseEntity{
 		this.setAmountOfVotes(amountOfVotes);
 		this.setSumOfGrades(sumOfGrades);
 		this.setRating(sumOfGrades, amountOfVotes);
-
 	}
 	
 	
