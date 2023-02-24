@@ -8,7 +8,6 @@ import javax.persistence.Table;
 @Table(name = "Review")
 public class Review extends BaseEntity{
 	
-	
 	private static final long serialVersionUID = 1721175577813205140L;
 	
 	@Column
@@ -32,12 +31,12 @@ public class Review extends BaseEntity{
 	}
 
 	public void Update(String author, String publishedOn, String review, int amountOfVotes, int sumOfGrades, double rating) {
-		Review.author = author;
-		this.publishedOn = publishedOn;
-		this.review = review;
-		this.amountOfVotes = amountOfVotes;
-		this.sumOfGrades = sumOfGrades;
-		this.rating = rating;
+		this.setAuthor(author);
+		this.setPublishedOn(publishedOn);
+		this.setReview(review);
+		this.setAmountOfVotes(amountOfVotes);
+		this.setSumOfGrades(sumOfGrades);
+		this.setRating(sumOfGrades, amountOfVotes);
 	}
 
 	public String getAuthor() {

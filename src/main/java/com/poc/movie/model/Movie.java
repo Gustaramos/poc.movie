@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "movie")//mudar pra letra maiuscula
+@Table(name = "Movie")
 public class Movie extends BaseEntity{
 	
 	private static final long serialVersionUID = 1721175577813205140L;
@@ -29,13 +29,12 @@ public class Movie extends BaseEntity{
 	}
 
 	public void Update(String name, String cover, int amountOfVotes, int sumOfGrades, double rating) {
-		//aqui no metodo de update usa os setXXX das propriedades
-		//ex this.setName(name);
-		Movie.name = name;
-		this.cover = cover;
-		this.amountOfVotes = amountOfVotes;
-		this.sumOfGrades = sumOfGrades;
-		this.rating = rating;
+		this.setName(name);
+		this.setCover(cover);
+		this.setAmountOfVotes(amountOfVotes);
+		this.setSumOfGrades(sumOfGrades);
+		this.setRating(sumOfGrades, amountOfVotes);
+
 	}
 	
 	
@@ -53,10 +52,10 @@ public class Movie extends BaseEntity{
 		this.cover = cover;
 	}
 
-	public int getAmountOfMovies() {
+	public int getAmountOfVotes() {
 		return amountOfVotes;
 	}
-	public void setAmountOfMovies(int amountOfVotes) {
+	public void setAmountOfVotes(int amountOfVotes) {
 		this.amountOfVotes = amountOfVotes;
 	}
 
