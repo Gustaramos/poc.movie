@@ -11,6 +11,7 @@ public class Review extends BaseEntity{
 	private static final long serialVersionUID = 1721175577813205140L;
 	
 	@Column
+	BaseEntity baseEntity;
 	static String author;
 	private String publishedOn;
 	private String review;

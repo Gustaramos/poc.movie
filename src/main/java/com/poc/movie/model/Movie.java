@@ -11,6 +11,7 @@ public class Movie extends BaseEntity{
 	private static final long serialVersionUID = 1721175577813205140L;
 	
 	@Column
+	BaseEntity baseEntity;
 	static String name;
 	private String cover;
 	private int amountOfVotes;
