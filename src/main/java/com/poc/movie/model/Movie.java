@@ -6,13 +6,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Movie")
-public class Movie extends BaseEntity{
-	
-	private static final long serialVersionUID = 1721175577813205140L;
+public class Movie {
 	
 	@Column
-	BaseEntity baseEntity;
-	static String name;
+	private String name;
 	private String cover;
 	private int amountOfVotes;
 	private int sumOfGrades;
@@ -22,7 +19,7 @@ public class Movie extends BaseEntity{
 	}
 
 	public Movie(String name, String cover, int amountOfVotes, int sumOfGrades, double rating) {
-		Movie.name = name;
+		this.name = name;
 		this.cover = cover;
 		this.amountOfVotes = amountOfVotes;
 		this.sumOfGrades = sumOfGrades;
@@ -30,8 +27,8 @@ public class Movie extends BaseEntity{
 	}
 
 	public void Update(String name, String cover, int amountOfVotes, int sumOfGrades, double rating) {
-		this.setName(name);
-		this.setCover(cover);
+		this.name = name;
+		this.cover = cover;
 		this.setAmountOfVotes(amountOfVotes);
 		this.setSumOfGrades(sumOfGrades);
 		this.setRating(sumOfGrades, amountOfVotes);
@@ -41,15 +38,9 @@ public class Movie extends BaseEntity{
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		Movie.name = name;
-	}
 
 	public String getCover() {
 		return cover;
-	}
-	public void setCover(String cover) {
-		this.cover = cover;
 	}
 
 	public int getAmountOfVotes() {
@@ -70,7 +61,7 @@ public class Movie extends BaseEntity{
 		return rating;
 	}
 	public void setRating(int sumOfGrades, int amountOfVotes) {
-		this.rating = sumOfGrades / amountOfVotes;
+		this.rating = (double) sumOfGrades / amountOfVotes;
 	}
 
 }
